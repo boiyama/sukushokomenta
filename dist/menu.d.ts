@@ -9,6 +9,7 @@ export interface MenuHandlers {
 }
 /** ドラッグで動かせるメニュー。送信待ちコメントの一覧と送信もここ */
 export declare class Menu {
+    private root;
     private h;
     private el;
     private panel;
@@ -22,6 +23,10 @@ export declare class Menu {
     private urls;
     constructor(root: ShadowRoot, h: MenuHandlers);
     private drag;
+    /** 送信待ちの一覧を開いているか */
+    get isOpen(): boolean;
+    close(): void;
+    private outside;
     private placePanel;
     private panelClick;
     /** 画像の作成中は ① を押せなくする */
